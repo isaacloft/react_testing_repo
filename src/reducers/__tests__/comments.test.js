@@ -13,3 +13,8 @@ it('handles actions of type SAVE_COMMENT', () => {
 	console.log(newState);
 	expect(newState).toEqual(['new comment']);
 });
+
+it('handles action with unknown type', () => {
+	const newState = commentsReducer([], { type: 'LDASD' });
+	expect(newState).toEqual([]);
+});
